@@ -1,0 +1,218 @@
+@import"./../../styles/variables";
+
+#main {
+  header {
+    transition: width 2s, height 2s, background-color .5s, transform 2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid rgba($md-black, .15);
+
+    .navbar-brand {
+      text-decoration: none;
+      color: $md-black;
+
+      /*      span {
+        font-weight: 600;
+
+        .second-span {
+          font-weight: lighter;
+        }
+      } */
+    }
+
+    .mobile-items {
+      ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          width: 25px;
+          height: 25px;
+          margin-right: 24px;
+
+          &:last-child {
+            margin-right: unset;
+          }
+
+          &.burger-button {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+
+            svg {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      @media (min-width:961px) {
+        display: none;
+      }
+    }
+
+    .links-nav {
+      align-items: center;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      @media (max-width:961px) {
+        transition: width 2s, height 2s, background-color .5s, transform 2s;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100vh;
+        z-index: 11;
+        background-color: $md-white;
+
+        &.active {
+          display: flex;
+        }
+      }
+
+      li {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: unset;
+        }
+
+        &.switch-desktop {
+          @media (max-width:961px) {
+            display: none;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: $md-black;
+
+          &:hover {
+            text-decoration: underline;
+
+            @media (max-width:961px) {
+              text-decoration: none;
+            }
+          }
+
+          @media (max-width:961px) {
+            display: block;
+            text-align: center;
+            padding: 25px 0;
+            text-decoration: none;
+          }
+        }
+
+        &.link-nav {
+          @media (max-width:961px) {
+            width: 60%;
+            margin: 0 auto;
+            display: block;
+            border-top: 1px solid rgba($md-black, 0.1);
+
+            &:hover {
+              @media (max-width:961px) {
+                text-decoration: none;
+                background-color: rgba($md-black, .15);
+              }
+            }
+
+            &:first-child {
+              border-top: unset;
+            }
+          }
+        }
+      }
+    }
+
+    .button-close {
+      display: none;
+      left: 90%;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+      border: 3px solid rgba($md-black, .9);
+      border-radius: 50%;
+      font-weight: 600;
+      cursor: pointer;
+      right: 12%;
+      top: 100%;
+      z-index: 12;
+
+      &.active {
+        display: flex;
+      }
+
+      @media (min-width:961px) {
+        display: none;
+      }
+
+      @media (max-width:500px) {
+        left: 80%;
+        top: 70%;
+      }
+
+      &:hover {
+        background-color: rgba($md-black, .9);
+        color: $md-white;
+        border: 3px solid rgba($md-black, .1);
+      }
+    }
+  }
+
+  .dark-mode {
+    header {
+      border-bottom: 1px solid rgba($md-white, .15);
+      background-color: $md-black;
+
+      .links-nav {
+        /* background-color: $md-black; */
+
+        li.link-nav {
+          @media (max-width:961px) {
+            border-top: 1px solid rgba($md-white, .15);
+
+            &:first-child {
+              border-top: unset;
+            }
+          }
+        }
+
+        li {
+          a {
+            color: $md-white;
+          }
+        }
+      }
+
+      .button-close {
+        border: 3px solid rgba($md-white, .9);
+
+
+        &:hover {
+          border: 3px solid rgba($md-white, .1);
+          color: $md-black;
+          background-color: rgba($md-white, .9);
+        }
+      }
+    }
+  }
+}

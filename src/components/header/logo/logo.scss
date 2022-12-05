@@ -1,0 +1,26 @@
+@import "./../../../styles/variables";
+
+.brand-logo {
+  color: $md-black;
+
+  .firt-part {
+    border-right: 1px solid $md-black;
+    font-weight: bold;
+    padding: 4px;
+  }
+
+  .second-part {
+    font-weight: 400;
+    padding: 4px;
+  }
+}
+
+.dark-mode {
+  .brand-logo {
+    color: $md-white;
+
+    .firt-part {
+      border-right: 1px solid $md-white;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import"./variables";
+
+.card {
+  background-color: $white;
+  border: 1px solid rgba($md-black, .2);
+  border-radius: 5px;
+  margin: 8px;
+
+  .img-card {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .card-body {
+    padding: 8px;
+  }
+}
+
+.dark-mode {
+  .card {
+    border: 1px solid rgba($md-white, .2);
+    background-color: $md-black;
+  }
+}
